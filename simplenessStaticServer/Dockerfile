@@ -1,11 +1,16 @@
-FROM node:14-alpine
+# FROM node:14-alpine
 
-WORKDIR /simplenessStaticServer
+# WORKDIR /simplenessStaticServer
 
-COPY . .
+# COPY . .
 
-RUN npm install 
+# RUN npm install 
 
-CMD npm start
+# CMD npm start
 
-EXPOSE 3000
+# EXPOSE 3000  走 docker
+
+
+FROM nginx:alpine
+
+ADD index.html /usr/share/nginx/html/
