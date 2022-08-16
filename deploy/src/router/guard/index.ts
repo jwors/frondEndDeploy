@@ -5,13 +5,20 @@ import {getCookie} from '@/utils/index'
 export function createPermissionGuard(router:Router){
     router.beforeEach(async (to,from,next) => {
         nProgress.start()
-        const permission = getCookie('power')
-        if(!permission) {
-            next('/login')
-            nProgress.done()
-            return
-        }else{
+        const permission = getCookie('login')
+        if(permission) {
+            alert(1)
             next()
+            nProgress.done()
+        }else{
+            
+            if(to.path === '/login'){
+                next()
+            }else{
+                next({
+                    path:'/login'
+                }) 
+            }
             nProgress.done()
         }
     })
