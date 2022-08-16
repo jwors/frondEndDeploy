@@ -1,5 +1,5 @@
 <template>
-  <a-layout>
+  <a-layout class="h-full">
     <Menu />
     <a-layout>
       <Header />

@@ -1,5 +1,5 @@
 <template>
-  <a-layout-header class="p-0 bg-white">
+  <a-layout-header style="background: #fff; padding: 0">
     <menu-unfold-outlined
       v-if="collapsed"
       class="trigger"
@@ -13,8 +13,13 @@
   </a-layout-header>
 </template>
 <script lang="ts">
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
 export default defineComponent({
   name: "Header",
+  components: {
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+  },
   setup() {
     return {
       collapsed: ref<boolean>(false),
