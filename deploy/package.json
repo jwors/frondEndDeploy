@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@types/js-cookie": "^3.0.2",
     "ant-design-vue": "^3.2.11",
     "js-cookie": "^3.0.1",

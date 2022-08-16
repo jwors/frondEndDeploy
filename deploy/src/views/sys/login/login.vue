@@ -54,12 +54,14 @@ interface FormState {
 }
 export default defineComponent({
   setup() {
+    const router = useRouter();
     const formState = reactive<FormState>({
       username: "",
       password: "",
     });
     const onFinish = (values: any) => {
       setCookie("login", "_098Lsdf^5asdf");
+      router.push("/dashboard");
     };
 
     const onFinishFailed = (errorInfo: any) => {
