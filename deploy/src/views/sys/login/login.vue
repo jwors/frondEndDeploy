@@ -3,9 +3,13 @@
     class="loginContainer flex justify-center items-center w-full bg-blue-500"
   >
     <div
-      class="centent bg-white rounded-md h-1/3 sm:w-2/4 mobel:w-4/5 shadow-2xl"
+      class="centent bg-white rounded-md h-1/3 sm:w-2/4 mobel:w-4/5 mobel:h-1/2 shadow-2xl"
     >
-      <div class="text-blue-400 sm:text-4xl mobel:text-2xl mb-4">登录</div>
+      <div
+        class="text-blue-400 sm:text-3xl mobel:text-2xl mb-4 tracking-widest"
+      >
+        登录
+      </div>
       <a-form
         class=""
         :model="formState"

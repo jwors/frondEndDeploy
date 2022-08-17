@@ -7,7 +7,6 @@ export function createPermissionGuard(router:Router){
         nProgress.start()
         const permission = getCookie('login')
         if(permission) {
-            alert(1)
             next()
             nProgress.done()
         }else{
