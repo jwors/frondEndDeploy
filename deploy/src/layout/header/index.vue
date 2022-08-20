@@ -1,5 +1,7 @@
 <template>
-  <a-layout-header style="background: #fff; padding: 0">
+  <a-layout-header
+    style="background: #fff; padding: 0px 20px; height: 48px; line-height: 48px"
+  >
     <menu-unfold-outlined
       v-if="adminStore.expansion"
       class="trigger"
