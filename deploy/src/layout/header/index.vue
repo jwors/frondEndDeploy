@@ -10,17 +10,37 @@
       class="trigger"
       @click="switchExpansion(false)"
     ></menu-fold-outlined>
-    <a-avatar src="https://joeschmoe.io/api/v1/random" />
+    <div>
+      <fullscreen-outlined
+        class="mr-5 text-xl cursor-pointer"
+        @click="toggleScreen"
+        v-show="!screenStatus"
+      />
+      <fullscreen-exit-outlined
+        class="mr-5 text-xl cursor-pointer"
+        @click="toggleScreen"
+        v-show="screenStatus"
+      />
+      <a-avatar src="https://joeschmoe.io/api/v1/random" />
+    </div>
   </a-layout-header>
 </template>
 <script lang="ts">
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons-vue";
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  FullscreenOutlined,
+  FullscreenExitOutlined,
+} from "@ant-design/icons-vue";
+import screenfull from "screenfull";
 import { adminManagerPinia } from "@/store/index";
 export default defineComponent({
   name: "Header",
   components: {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
+    FullscreenOutlined,
+    FullscreenExitOutlined,
   },
   setup() {
     const adminStore = adminManagerPinia();
@@ -29,10 +49,19 @@ export default defineComponent({
     const switchExpansion = (status: boolean): void => {
       adminStore.changeExpansion();
     };
+
+    // shrink
+    let screenStatus = ref<boolean>(false); // false 小   true 大
+    const toggleScreen = () => {
+      screenStatus.value = !screenStatus.value;
+      screenfull.toggle();
+    };
     return {
       collapsed: ref<boolean>(false),
       adminStore,
       switchExpansion,
+      toggleScreen,
+      screenStatus,
     };
   },
 });
