@@ -36,5 +36,15 @@ export default defineConfig({
       '@':resolve(__dirname,'src'),
       'components':resolve(__dirname,'src/components')
     }
+  },
+  css:{
+    preprocessorOptions:{
+      less:{
+        modifyVars:{
+          hack: `true; @import (reference) "${resolve(__dirname, 'src/design/index.less')}";`
+        },
+        javascriptEnabled: true
+      }
+    }
   }
 })

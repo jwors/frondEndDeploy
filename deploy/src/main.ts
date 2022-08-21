@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './design/index.less'
 import App from './App.vue'
 import 'nprogress/nprogress.css'  // 这个nprogress样式必须引入
 import 'ant-design-vue/dist/antd.css'

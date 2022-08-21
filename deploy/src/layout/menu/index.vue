@@ -4,7 +4,9 @@
     :trigger="null"
     collapsible
   >
-    <div class="logo" />
+    <div :class="adminStore.expansion ? 'expansionStatus' : 'logo'">
+      {{ adminStore.expansion ? "C_" : "C_lOGIN" }}
+    </div>
     <a-menu
       v-model:selectedKeys="selectedKeys"
       @click="pushRouter"
@@ -50,9 +52,20 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .ant-menu-title-content {
   display: flex;
   align-items: center;
+}
+.expansionStatus,
+.logo {
+  color: white;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+.expansionStatus {
 }
 </style>

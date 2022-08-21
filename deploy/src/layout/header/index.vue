@@ -1,7 +1,5 @@
 <template>
-  <a-layout-header
-    style="background: #fff; padding: 0px 20px; height: 48px; line-height: 48px"
-  >
+  <a-layout-header class="headerContainer">
     <menu-unfold-outlined
       v-if="adminStore.expansion"
       class="trigger"
@@ -12,6 +10,7 @@
       class="trigger"
       @click="switchExpansion(false)"
     ></menu-fold-outlined>
+    <a-avatar src="https://joeschmoe.io/api/v1/random" />
   </a-layout-header>
 </template>
 <script lang="ts">
@@ -38,3 +37,14 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="less" scoped>
+.headerContainer {
+  background: #fff;
+  padding: 0px 20px;
+  height: 48px;
+  line-height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
