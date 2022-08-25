@@ -29,7 +29,9 @@
 import { CodepenCircleOutlined } from "@ant-design/icons-vue";
 import { adminManagerPinia } from "@/store/index";
 interface RouterItem {
+  item?: Object;
   key: string;
+  keyPath?: any;
 }
 export default defineComponent({
   name: "customMenu",
@@ -68,7 +70,5 @@ export default defineComponent({
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-}
-.expansionStatus {
 }
 </style>

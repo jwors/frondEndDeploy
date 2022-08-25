@@ -1,15 +1,20 @@
 <template>
   <a-layout-header class="headerContainer">
-    <menu-unfold-outlined
-      v-if="adminStore.expansion"
-      class="trigger"
-      @click="switchExpansion(true)"
-    />
-    <menu-fold-outlined
-      v-else
-      class="trigger"
-      @click="switchExpansion(false)"
-    ></menu-fold-outlined>
+    <div class="leftHeader flex items-center cursor-pointer">
+      <menu-unfold-outlined
+        v-if="adminStore.expansion"
+        class="trigger"
+        @click="switchExpansion(true)"
+      />
+      <menu-fold-outlined
+        v-else
+        class="trigger"
+        @click="switchExpansion(false)"
+      ></menu-fold-outlined>
+      <p class="exhibitionNowRoute">
+        Dashbord<span class="mx-1">/</span>分析叶
+      </p>
+    </div>
     <div>
       <fullscreen-outlined
         class="mr-5 text-xl cursor-pointer"
@@ -75,5 +80,11 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.trigger {
+  font-size: 18px;
+}
+.exhibitionNowRoute {
+  margin: 0px 20px !important;
 }
 </style>
