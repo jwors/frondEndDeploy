@@ -1,10 +1,8 @@
 import { defineStore } from "pinia";
 
-
-
 interface addRoute{
     path:string,
-    routeName:string,
+    routeName:any,
     exhibitionRoute:boolean
 }
 interface routeHistoryStore {

@@ -19,8 +19,8 @@
           <codepen-circle-outlined />
           <span>Dashboard</span>
         </template>
-        <a-menu-item key="/dashboard/analysis">analysis</a-menu-item>
-        <a-menu-item key="/dashboard/workbench">workbench</a-menu-item>
+        <a-menu-item key="/dashboard/analysis">分析页</a-menu-item>
+        <a-menu-item key="/dashboard/workbench">工作台</a-menu-item>
       </a-sub-menu>
     </a-menu>
   </a-layout-sider>
