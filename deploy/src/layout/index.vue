@@ -3,7 +3,9 @@
     <Menu />
     <a-layout>
       <Header />
-      <Centent />
+      <div class="pageContainer">
+        <Centent />
+      </div>
     </a-layout>
   </a-layout>
 </template>
@@ -19,3 +21,9 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="less" scoped>
+.pageContainer {
+  height: calc(100% - 48px);
+  padding: 10px;
+}
+</style>

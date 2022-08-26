@@ -17,7 +17,7 @@
       <a-sub-menu key="sub1">
         <template #title>
           <codepen-circle-outlined />
-          <span>Dashboard</span>
+          <span class="routeName">Dashboard</span>
         </template>
         <a-menu-item key="/dashboard/analysis">分析页</a-menu-item>
         <a-menu-item key="/dashboard/workbench">工作台</a-menu-item>
@@ -70,5 +70,8 @@ export default defineComponent({
   text-align: center;
   font-size: 30px;
   font-weight: 600;
+}
+.routeName {
+  vertical-align: sub;
 }
 </style>
