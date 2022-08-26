@@ -27,7 +27,7 @@
 </template>
 <script lang="ts">
 import { CodepenCircleOutlined } from "@ant-design/icons-vue";
-import { adminManagerPinia } from "@/store/index";
+import { adminManagerPinia } from "@/store/modules/index";
 interface RouterItem {
   item?: Object;
   key: string;

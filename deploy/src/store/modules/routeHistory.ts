@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-
+import {store} from '../store'
 interface addRoute{
     path:string,
     routeName:any,
@@ -16,7 +16,15 @@ export const routeHistoryPinia = defineStore('routeHistory',{
     },
     actions:{
         addRouteHistory(route:addRoute):void{
-            let isIndexOf = this.routerHistoryList.some(item => item.path === route.path)
+            // add push route to history stack
+            let isIndexOf:boolean = false;
+            this.routerHistoryList.forEach(item => {
+                item.exhibitionRoute = false
+                if( item.path === route.path) {
+                    item.exhibitionRoute = true
+                    isIndexOf = true
+                }
+            })
             if(!isIndexOf){
                 this.routerHistoryList.push(route)
             }
@@ -24,5 +32,14 @@ export const routeHistoryPinia = defineStore('routeHistory',{
         removeRoute(path:string):void{
             this.routerHistoryList = this.routerHistoryList.filter(item =>item.path != path)
         }
+    },
+    getters:{
+        getNowExhibition():addRoute{
+            return this.routerHistoryList.filter(item => item.exhibitionRoute== true)[0]
+        }
     }
 })
+
+export function routeHistoryStore(){
+    return routeHistoryPinia(store);
+}

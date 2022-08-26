@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import {store} from '../store'
 
 interface adminStore {
     expansion:boolean
@@ -16,3 +17,7 @@ export const adminManagerPinia = defineStore('admin',{
         }
     }
 })
+
+export function useManangeStore(){
+    return adminManagerPinia(store);
+}

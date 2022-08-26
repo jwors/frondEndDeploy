@@ -3,15 +3,14 @@ import './design/index.less'
 import App from './App.vue'
 import 'nprogress/nprogress.css'  // 这个nprogress样式必须引入
 import 'ant-design-vue/dist/antd.css'
-import {createPinia} from 'pinia'
+import { setupStore } from './store/store'
 import {router} from '@/router'
 import {createPermissionGuard} from '@/router/guard'
 
-const store = createPinia()
-function generateApp (){
+ function generateApp (){
     const app = createApp(App)
+    setupStore(app)
     app.use(router)
-    app.use(store)
     createPermissionGuard(router)
     app.mount('#app');
 }

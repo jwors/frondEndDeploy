@@ -1,17 +1,18 @@
-import type {Router,RouteRecordRaw} from 'vue-router'
-import { routeHistoryPinia } from '@/store/routeHistory';
+import type {Router} from 'vue-router'
+import { routeHistoryStore } from '@/store/modules/routeHistory';
 import nProgress from 'nprogress';
 import {getCookie} from '@/utils/index'
 
-const routeHistoryPiniaStore = routeHistoryPinia()
+
+
 
 export function createPermissionGuard(router:Router){
+    nProgress.start()
+    const  routeHistoryPiniaStore = routeHistoryStore()
     router.beforeEach(async (to,from,next) => {
-        nProgress.start()
         const permission = getCookie('login')
         if(permission) {
             next()
-            console.log(to);
             routeHistoryPiniaStore.addRouteHistory({
                 path:to.path,
                 exhibitionRoute:true,
