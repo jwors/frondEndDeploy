@@ -1,5 +1,5 @@
 <template>
-  <div class="blockContainer grid grid-cols-4 gap-4">
+  <div class="blockContainer">
     <BlockData
       :dataTitle="item.dataTitle"
       :dateType="item.dateType"
@@ -38,4 +38,19 @@ const blockDataList: Array<blockDataItem> = reactive([
   },
 ]);
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.blockContainer {
+  display: grid;
+  // grid-template-rows: repeat(25%, 4);
+  grid-template-columns: repeat(4, 24%);
+  justify-content: space-around;
+  grid-column-gap: 20px;
+  @media (max-width: @screen-moble) {
+    display: flex;
+    flex-direction: column;
+    .dataContainer {
+      margin-bottom: 10px;
+    }
+  }
+}
+</style>

@@ -32,5 +32,6 @@ export default defineComponent({
 .pageContainer {
   height: calc(100% - 48px);
   padding: 10px;
+  overflow: auto;
 }
 </style>
