@@ -55,7 +55,7 @@ export default defineComponent({
 
     const adminStore = adminManagerPinia(); // pinia仓库
     // 路由的跳转
-    const pushRouter = (item: RouterItem): void => {
+    const pushRouter = (item: RouterItem) => {
       console.log("test");
 
       let presentFullPath = router.currentRoute.value.fullPath;
