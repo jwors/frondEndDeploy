@@ -40,11 +40,11 @@
 <script lang="ts">
 import { CodepenCircleOutlined } from "@ant-design/icons-vue";
 import { adminManagerPinia } from "@/store/modules/index";
-interface RouterItem {
-  item?: Object;
-  key: string;
-  keyPath?: any;
-}
+// interface RouterItem {
+//   item?: Object;
+//   key: string;
+//   keyPath?: any;
+// }
 export default defineComponent({
   name: "customMenu",
   components: {
@@ -55,7 +55,7 @@ export default defineComponent({
 
     const adminStore = adminManagerPinia(); // pinia仓库
     // 路由的跳转
-    const pushRouter = (item: RouterItem) => {
+    const pushRouter = (item) => {
       console.log("test");
 
       let presentFullPath = router.currentRoute.value.fullPath;
