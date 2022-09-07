@@ -7,7 +7,16 @@
         >{{ dateType }}</span
       >
     </div>
-    <div class="dataBottom"></div>
+    <div class="dataBottom">
+      <div>
+        <p>$2000</p>
+        <p>icon</p>
+      </div>
+      <div>
+        <p>总访问数</p>
+        <p>$120,000</p>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
