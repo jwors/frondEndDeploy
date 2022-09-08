@@ -1,28 +1,41 @@
 <template>
   <div class="dataContainer rounded-sm border-1 border-white bg-white">
     <div class="dataHeader flex justify-between px-4">
-      <span>{{ dataTitle }}</span>
+      <span>{{ cardData.dataTitle }}</span>
       <span
         class="text-violet-700 px-2 lh leading-2 border-1 bg-violet-300 border-violet-500"
-        >{{ dateType }}</span
+        >{{ cardData.dateType }}</span
       >
     </div>
     <div class="dataBottom">
-      <div>
-        <p>$2000</p>
+      <div class="flex justify-between">
+        <p>${{ cardData.value }}</p>
         <p>icon</p>
       </div>
-      <div>
+      <div class="flex justify-between">
         <p>总访问数</p>
-        <p>$120,000</p>
+        <p>{{ cardData.total }}</p>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import { PropType } from "vue";
+interface BlockDataItem {
+  id: number;
+  dataTitle: string;
+  dateType: string;
+  total: number;
+  color: string;
+  value: number;
+}
+
+// 用于在用运行时 props 声明时给一个 prop 标注更复杂的类型定义
 defineProps({
-  dataTitle: String,
-  dateType: String,
+  cardData: {
+    type: Object as PropType<BlockDataItem>,
+    required: true,
+  },
 });
 </script>
 <style lang="less" scoped>
