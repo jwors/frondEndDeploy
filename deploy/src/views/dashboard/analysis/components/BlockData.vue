@@ -48,4 +48,11 @@ defineProps({
   line-height: 35px;
   border-bottom: 1px solid #e5e7eb;
 }
+.dataBottom {
+  height: calc(100% - 35px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 </style>
