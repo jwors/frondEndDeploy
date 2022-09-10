@@ -14,10 +14,13 @@
         {{ item.name }}
       </p>
     </div>
+    <component :is="visibleCompontent"></component>
   </div>
 </template>
 <script lang="ts" setup>
 import BlockData from "./components/BlockData.vue";
+import FlowTendency from "./components/FlowTendency.vue";
+import Traffic from "./components/Traffic.vue";
 import { BlockDataItem, EchartsHeader } from "../types";
 const blockDataList: Array<BlockDataItem> = reactive([
   {
@@ -61,19 +64,24 @@ const echartsHeaderList: Array<EchartsHeader> = reactive([
     id: 0,
     name: "流量趋势",
     chooseStatus: true,
+    componentName: FlowTendency,
   },
   {
     id: 1,
     name: "访问量",
     chooseStatus: false,
+    componentName: Traffic,
   },
 ]);
+
+let visibleCompontent = shallowRef(FlowTendency);
 
 const changeTab = (e: Event) => {
   const id = e.target?.getAttribute("data-index");
   for (let t = 0; t < echartsHeaderList.length; t++) {
     if (echartsHeaderList[t].id == id) {
       echartsHeaderList[t].chooseStatus = true;
+      visibleCompontent.value = echartsHeaderList[t].componentName;
     } else {
       echartsHeaderList[t].chooseStatus = false;
     }

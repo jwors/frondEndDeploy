@@ -1,3 +1,4 @@
+ import FlowTendency from "./analysis/components/FlowTendency.vue";
 export interface BlockDataItem {
     id: number;
     dataTitle: string;
@@ -10,5 +11,6 @@ export interface BlockDataItem {
 export interface EchartsHeader{
   id:number,
   name:string,
-  chooseStatus:Boolean
+  chooseStatus:Boolean,
+  componentName:InstanceType<typeof FlowTendency | null> 
 }  
