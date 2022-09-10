@@ -6,3 +6,9 @@ export interface BlockDataItem {
     color: string;
     value: number;
   }
+
+export interface EchartsHeader{
+  id:number,
+  name:string,
+  chooseStatus:Boolean
+}  

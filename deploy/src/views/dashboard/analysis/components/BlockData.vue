@@ -1,7 +1,7 @@
 <template>
   <div class="dataContainer rounded-sm border-1 border-white bg-white">
     <div class="dataHeader flex justify-between px-4">
-      <span>{{ cardData.dataTitle }}</span>
+      <span cla>{{ cardData.dataTitle }}</span>
       <span
         class="text-violet-700 px-2 lh leading-2 border-1 bg-violet-300 border-violet-500"
         >{{ cardData.dateType }}</span
@@ -9,12 +9,12 @@
     </div>
     <div class="dataBottom">
       <div class="flex justify-between">
-        <p>${{ cardData.value }}</p>
+        <p class="text-2xl">${{ cardData.value }}</p>
         <p>icon</p>
       </div>
       <div class="flex justify-between">
         <p>总访问数</p>
-        <p>{{ cardData.total }}</p>
+        <p>${{ cardData.total }}</p>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ defineProps({
 }
 .dataBottom {
   height: calc(100% - 35px);
-  padding: 10px;
+  padding: 25px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

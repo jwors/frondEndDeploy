@@ -2,10 +2,23 @@
   <div class="blockContainer">
     <BlockData :cardData="item" v-for="item in blockDataList" :key="item.id" />
   </div>
+  <div class="echartsContainer rounded-sm bg-white border-spacing-2 mt-4">
+    <div class="echartsHeader h-14 flex" @click="changeTab">
+      <p
+        class="m-0 p-o"
+        :data-index="item.id"
+        :class="{ chooseP: item.chooseStatus }"
+        v-for="item in echartsHeaderList"
+        :key="item.id"
+      >
+        {{ item.name }}
+      </p>
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import BlockData from "./components/BlockData.vue";
-import { BlockDataItem } from "../types";
+import { BlockDataItem, EchartsHeader } from "../types";
 const blockDataList: Array<BlockDataItem> = reactive([
   {
     id: 0,
@@ -40,6 +53,33 @@ const blockDataList: Array<BlockDataItem> = reactive([
     color: "purple",
   },
 ]);
+
+// echarts node container
+
+const echartsHeaderList: Array<EchartsHeader> = reactive([
+  {
+    id: 0,
+    name: "流量趋势",
+    chooseStatus: true,
+  },
+  {
+    id: 1,
+    name: "访问量",
+    chooseStatus: false,
+  },
+]);
+
+const changeTab = (e: Event) => {
+  const id = e.target?.getAttribute("data-index");
+  for (let t = 0; t < echartsHeaderList.length; t++) {
+    if (echartsHeaderList[t].id == id) {
+      echartsHeaderList[t].chooseStatus = true;
+    } else {
+      echartsHeaderList[t].chooseStatus = false;
+    }
+  }
+  console.log("test");
+};
 </script>
 <style lang="less" scoped>
 .blockContainer {
@@ -55,5 +95,16 @@ const blockDataList: Array<BlockDataItem> = reactive([
       margin-bottom: 10px;
     }
   }
+}
+.echartsHeader p {
+  line-height: 3.5rem;
+  font-size: 16px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.chooseP {
+  font-weight: 600px;
+  color: #0960bd;
+  border-bottom: 2px solid #0960bd;
 }
 </style>
