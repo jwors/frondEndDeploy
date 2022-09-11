@@ -12,5 +12,5 @@ export interface EchartsHeader{
   id:number,
   name:string,
   chooseStatus:Boolean,
-  componentName:InstanceType<typeof FlowTendency | null> 
+  componentName:InstanceType<typeof FlowTendency> | null
 }  

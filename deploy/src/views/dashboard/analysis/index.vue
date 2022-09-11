@@ -59,7 +59,7 @@ const blockDataList: Array<BlockDataItem> = reactive([
 
 // echarts node container
 
-const echartsHeaderList: Array<EchartsHeader> = reactive([
+const echartsHeaderList: Array<EchartsHeader> = shallowReactive([
   {
     id: 0,
     name: "流量趋势",
@@ -94,7 +94,7 @@ const changeTab = (e: Event) => {
   display: grid;
   // grid-template-rows: repeat(25%, 4);
   grid-template-columns: repeat(4, 24%);
-  justify-content: space-around;
+  justify-content: space-between;
   grid-column-gap: 20px;
   @media (max-width: @screen-moble) {
     display: flex;
