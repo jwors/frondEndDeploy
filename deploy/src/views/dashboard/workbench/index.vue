@@ -14,8 +14,18 @@
       </li>
     </ul>
   </div>
+  <div class="allItemContainer mt-5">
+    <ProjectCard />
+    <LatestDevelopment />
+    <QuickNavigation />
+    <Statistical />
+  </div>
 </template>
 <script lang="ts" setup>
+import ProjectCard from "./components/ProjectCard.vue";
+import LatestDevelopment from "./components/latestDevelopment.vue";
+import QuickNavigation from "./components/QuickNavigation.vue";
+import Statistical from "./components/statistical.vue";
 const headerRigthItem = reactive([
   {
     itemName: "待办",
@@ -74,5 +84,8 @@ p {
 .blessing p:nth-child(2) {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.45);
+}
+.allItemContainer {
+  display: grid;
 }
 </style>
