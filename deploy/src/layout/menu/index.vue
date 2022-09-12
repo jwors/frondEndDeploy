@@ -20,7 +20,7 @@
       </div>
       <a-menu
         v-model:selectedKeys="selectedKeys"
-        @click.stop="pushRouter"
+        @click="pushRouter"
         theme="dark"
         mode="inline"
         :style="{ height: '100%', borderRight: 0 }"
@@ -56,6 +56,8 @@ export default defineComponent({
     const adminStore = adminManagerPinia(); // pinia仓库
     // 路由的跳转
     const pushRouter = (item: any) => {
+      console.log(item);
+
       let presentFullPath = router.currentRoute.value.fullPath;
       if (presentFullPath != item.key) {
         router.push(item.key);
@@ -82,7 +84,9 @@ export default defineComponent({
     });
 
     // 阻止事件冒泡
-    const stopEventBubbing = () => {};
+    const stopEventBubbing = () => {
+      console.log("test");
+    };
     return {
       pushRouter,
       selectedKeys: ref<string[]>(["/dashboard/analysis"]),
