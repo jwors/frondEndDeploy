@@ -4,7 +4,7 @@
       <a-avatar :size="60" src="https://joeschmoe.io/api/v1/random" />
       <div class="blessing">
         <p>早安, Vben Admin, 开始您一天的工作吧！</p>
-        <p>今日晴，20℃ - 32℃！</p>
+        <p>今日晴，20℃ - 32℃！dddd</p>
       </div>
     </div>
     <ul class="right flex justify-start">
