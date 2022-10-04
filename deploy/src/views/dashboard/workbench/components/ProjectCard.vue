@@ -10,7 +10,7 @@
           <i class="iconfont" :class="[item.iconName]"></i>
           {{ item.projectName }}
         </div>
-        <p>{{ item.introductory }}</p>
+        <p class="introductory">{{ item.introductory }}</p>
         <footer>
           <span>{{ item.team }}</span>
           <span>{{ item.time }}</span>
@@ -75,7 +75,9 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0px 15px;
-  border-bottom: 1px solid #d3d3d3;
+}
+header p:first-child {
+  font-size: 18px;
 }
 header p:last-child {
   color: #2a7dc9;
@@ -84,7 +86,7 @@ header p:last-child {
 .projectContainer {
   display: grid;
   grid-template-columns: repeat(3, 33.333%);
-  grid-template-rows: repeat(2, 180px);
+  grid-template-rows: repeat(2, 150px);
   .topHeader {
     font-size: 20px;
   }
@@ -95,17 +97,37 @@ header p:last-child {
 }
 .item {
   padding: 10px 10px 10px 20px;
+  cursor: pointer;
+}
+.item:hover {
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+  z-index: 1;
+  position: relative;
 }
 .item:nth-child(1),
 .item:nth-child(2) {
   border-right: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
 .item:nth-child(3) {
   border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
 }
 .item:nth-child(4),
 .item:nth-child(5) {
   border-right: 1px solid #f0f0f0;
+}
+.introductory {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+footer {
+  color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: space-between;
 }
 </style>
