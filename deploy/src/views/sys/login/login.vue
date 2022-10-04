@@ -8,7 +8,7 @@
       <div
         class="text-blue-400 sm:text-3xl mobel:text-2xl mb-4 tracking-widest"
       >
-        登录
+        登录_Jenkins
       </div>
       <a-form
         class=""

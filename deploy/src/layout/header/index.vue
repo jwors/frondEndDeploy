@@ -1,15 +1,21 @@
 <template>
   <a-layout-header class="headerContainer">
-    <menu-unfold-outlined
-      v-if="adminStore.expansion"
-      class="trigger"
-      @click="switchExpansion(true)"
-    />
-    <menu-fold-outlined
-      v-else
-      class="trigger"
-      @click="switchExpansion(false)"
-    ></menu-fold-outlined>
+    <div class="leftHeader flex items-center cursor-pointer">
+      <menu-unfold-outlined
+        v-if="adminStore.expansion"
+        class="trigger"
+        @click="switchExpansion(true)"
+      />
+      <menu-fold-outlined
+        v-else
+        class="trigger"
+        @click="switchExpansion(false)"
+      ></menu-fold-outlined>
+      <p class="exhibitionNowRoute">
+        Dashbord<span class="mx-1">/</span
+        >{{ routeHistoryList.getNowExhibition.routeName }}
+      </p>
+    </div>
     <div>
       <fullscreen-outlined
         class="mr-5 text-xl cursor-pointer"
@@ -33,7 +39,8 @@ import {
   FullscreenExitOutlined,
 } from "@ant-design/icons-vue";
 import screenfull from "screenfull";
-import { adminManagerPinia } from "@/store/index";
+import { useManangeStore } from "@/store/modules/index";
+import { routeHistoryStore } from "@/store/modules/routeHistory";
 export default defineComponent({
   name: "Header",
   components: {
@@ -43,7 +50,7 @@ export default defineComponent({
     FullscreenExitOutlined,
   },
   setup() {
-    const adminStore = adminManagerPinia();
+    const adminStore = useManangeStore();
 
     // 展开或者收缩
     const switchExpansion = (status: boolean): void => {
@@ -56,10 +63,15 @@ export default defineComponent({
       screenStatus.value = !screenStatus.value;
       screenfull.toggle();
     };
+
+    // 当前路由栈
+    const routeHistoryList = routeHistoryStore();
     return {
       collapsed: ref<boolean>(false),
       adminStore,
+      routeHistoryList,
       switchExpansion,
+      nowRouteExhition: routeHistoryList.getNowExhibition,
       toggleScreen,
       screenStatus,
     };
@@ -75,5 +87,11 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.trigger {
+  font-size: 18px;
+}
+.exhibitionNowRoute {
+  margin: 0px 20px !important;
 }
 </style>

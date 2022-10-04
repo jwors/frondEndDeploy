@@ -29,12 +29,12 @@ export const dashboard:RouteRecordRaw = {
     children:[
         {
             path:'analysis',
-            name:'Analysis',
+            name:'分析页',
             component:()=>import('@/views/dashboard/analysis/index.vue')
         },
         {
             path:'workbench',
-            name:'Workbench',
+            name:'工作台',
             component:()=>import('@/views/dashboard/workbench/index.vue')
         },
     ]

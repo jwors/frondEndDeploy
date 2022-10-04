@@ -9,14 +9,14 @@
     "baseUrl": ".", // 解析非相对模块名的基准目录
     "sourceMap": true, // 生成对应的 .map文件
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "paths": { // 模块名到基于 baseUrl的路径映射的列表。查看
     "@/*": ["src/*"],
     "@components/*": ["src/components/*"],
-    }
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/**/*.d.ts",
   "types/**/*.ts",
