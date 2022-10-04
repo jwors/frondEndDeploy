@@ -15,10 +15,10 @@
     </ul>
   </div>
   <div class="allItemContainer mt-5">
-    <ProjectCard />
-    <LatestDevelopment />
-    <QuickNavigation />
-    <Statistical />
+    <ProjectCard class="ProjectCard" />
+    <LatestDevelopment class="LatestDevelopment" />
+    <QuickNavigation class="QuickNavigation" />
+    <Statistical class="Statistical" />
   </div>
 </template>
 <script lang="ts" setup>
@@ -87,5 +87,21 @@ p {
 }
 .allItemContainer {
   display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  grid-gap: 10px 10px;
+}
+.ProjectCard {
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.LatestDevelopment {
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.QuickNavigation {
+  grid-column-start: 10;
+  grid-column-end: 14;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 </style>
