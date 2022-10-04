@@ -88,11 +88,12 @@ p {
 .allItemContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
-  grid-gap: 10px 10px;
+  grid-auto-flow: row dense;
 }
 .ProjectCard {
   grid-column-start: 1;
   grid-column-end: 10;
+  margin-bottom: 10px;
 }
 .LatestDevelopment {
   grid-column-start: 1;
@@ -101,7 +102,11 @@ p {
 .QuickNavigation {
   grid-column-start: 10;
   grid-column-end: 14;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  margin-left: 10px;
+}
+.Statistical {
+  grid-column-start: 10;
+  grid-column-end: 14;
+  margin-left: 10px;
 }
 </style>

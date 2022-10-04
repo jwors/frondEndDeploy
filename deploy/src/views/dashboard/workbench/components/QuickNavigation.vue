@@ -23,6 +23,18 @@ const navList = reactive([
     iconName: "icon-sharpicons_crop",
     navName: "探索",
   },
+  {
+    iconName: "icon-tubiao",
+    navName: "图表",
+  },
+  {
+    iconName: "icon-shujuquanxian",
+    navName: "数据权限",
+  },
+  {
+    iconName: "icon-guanli",
+    navName: "管理",
+  },
 ]);
 </script>
 <style lang="less" scoped>
@@ -36,7 +48,7 @@ header {
 .navContainer {
   display: grid;
   grid-template-columns: repeat(3, 33.333%);
-  grid-template-rows: repeat(1, 150px);
+  grid-template-rows: repeat(2, 150px);
   align-items: center;
   justify-items: center;
 }
@@ -53,7 +65,9 @@ header {
   }
 }
 .navCard:nth-child(1),
-.navCard:nth-child(2) {
+.navCard:nth-child(2),
+.navCard:nth-child(4),
+.navCard:nth-child(5) {
   border-right: 1px solid #f0f0f0;
 }
 </style>
