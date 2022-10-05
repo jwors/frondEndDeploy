@@ -94,6 +94,17 @@ header p:last-child {
     font-size: 28px;
     margin-right: 5px;
   }
+  @media (max-width: @screen-moble) {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(3, 33.333%);
+    .dataContainer {
+      margin-bottom: 10px;
+    }
+    .item {
+      border-bottom: 1px solid #f0f0f0;
+    }
+  }
 }
 .item {
   padding: 10px 10px 10px 20px;

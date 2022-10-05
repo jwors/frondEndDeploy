@@ -49,6 +49,7 @@ p {
 .userInfohHeader {
   padding: 0px 40px;
 }
+
 .left {
   display: flex;
   align-items: center;
@@ -59,6 +60,22 @@ p {
 }
 .right li:nth-child(odd) {
   text-align: right;
+}
+.userInfohHeader {
+  @media (max-width: @screen-moble) {
+    display: inherit;
+    padding: 20px 10px;
+    height: max-content;
+    .left {
+      margin-bottom: 10px;
+      display: inherit;
+      text-align: center;
+    }
+    .right {
+      justify-content: center;
+      margin-bottom: 0px;
+    }
+  }
 }
 .itemName {
   font-size: 14px;
@@ -89,6 +106,14 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
   grid-auto-flow: row dense;
+  @media (max-width: @screen-moble) {
+    display: inherit;
+    .QuickNavigation,
+    .Statistical {
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
 }
 .ProjectCard {
   grid-column-start: 1;
