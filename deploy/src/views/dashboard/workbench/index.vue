@@ -95,7 +95,7 @@ p {
   font-size: 18px;
   font-weight: 500;
   font-size: 120x;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.851);
   margin-bottom: 5px;
 }
 .blessing p:nth-child(2) {
